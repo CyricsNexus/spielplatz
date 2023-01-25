@@ -6,7 +6,7 @@ public class Filme {
 	
 	
 	void vorfuehren() {
-		System.out.printf("Titel: %s, Genre: %s", title, genre);
+		System.out.printf("Titel: %s, Genre: %s%n", title, genre);
 	}
 	
 	
