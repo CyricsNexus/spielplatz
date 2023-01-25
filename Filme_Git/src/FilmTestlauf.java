@@ -19,10 +19,13 @@ public class FilmTestlauf {
 		meineFilme[0].genre = "Drama";
 
 		meineFilme[1].titel = "Zwei Variablen trumpfen auf";
-		meineFilme[1].genre = "Kom�die";
+		meineFilme[1].genre = "Komödie";
+		
+		meineFilme[2].titel = "Die Hölle des gelben Königs";
+		meineFilme[2].genre = "Horror";
 
 		for (int i = 0; i<eingabe;i++) {
-			meineFilme[i].vorf�hren();
+			meineFilme[i].vorführen();
 		}
 
 		
