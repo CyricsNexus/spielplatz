@@ -1,38 +1,55 @@
-import java.util.Scanner;  
-
-
 public class FilmTestlauf {
 
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
+	/************************************************************************
+	 *	Objekte in einem Array erzeugen
+	 ************************************************************************
+	 *	Objekte der Klasse Film können in einen Array eingefügt werden
+	 *	Dadurch kann man auf Objektnamen verzichten
+	 *	Sie lassen sich durch den Index des Arrays ansprechen
+	 *
+	 *************************************************************************/		
+
+		int anzFilmeErstellen = 2;		// 2 Filme erstellen
 		
-		System.out.println("Wie viele Filme? (max. 3)");
-		int eingabe = sc.nextInt();
-		
-		if (eingabe > 3) {
-			Filme [] meineFilme = new Filme[eingabe];
-			for (int i = 0; i<eingabe;i++) {
-				meineFilme[i] = new Filme();
-			}
-
-			meineFilme[0].titel = "Vier Deadlines und ein Todesfall";
-			meineFilme[0].genre = "Drama";
-
-			meineFilme[1].titel = "Zwei Variablen trumpfen auf";
-			meineFilme[1].genre = "Komoedie";
-
-			meineFilme[2].titel = "Die Hoelle des gelben Koenigs";
-			meineFilme[2].genre = "Horror";
-
-			for (int i = 0; i<eingabe;i++) {
-				meineFilme[i].vorfuehren();
-			}
-		} else {
-			System.out.print("Das kann doch keiner an einem Abend sehen.");
+		Filme [] meineFilme = new Filme[anzFilmeErstellen];	// Filme werden hier durch Konstruktor ohne Parameter erzeugt
+		for (int i = 0; i < anzFilmeErstellen; i++) {
+			meineFilme[i] = new Filme();
 		}
+
+	/************************************************************************
+	 *	Setter müssen genutzt werden, um Instanzvariablen Titel und Genre nachträglich zu füllen
+	 ************************************************************************/
 		
-		sc.close();
+		meineFilme[0].setTitel("Vier Deadlines und ein Todesfall");
+		meineFilme[0].setGenre("Drama");
+
+		meineFilme[1].setTitel("Zwei Variablen trumpfen auf");
+		// meineFilme[1].setGenre("Komödie");
+
+	/************************************************************************
+	 *	Methoden der Klasse können auch bei Arrays ganz normal aufgerufen werden
+	 *	Der Film mit dem Index 1 hat kein Genre erhalten und hat damit noch den Wert null
+	 ************************************************************************/
+		
+		for (int i = 0; i < anzFilmeErstellen; i++) {
+			meineFilme[i].vorfuehren();
+		}
+
+	/************************************************************************
+	 *	Hier wird der Konstruktor mit Parametern aufgerufen
+	 *	Dadurch können Fehler vermieden werden
+	 ************************************************************************/
+
+		Filme neuerFilm = new Filme("Ohne Proto geht der Cheffe nie ins Bett","Komödie");
+		
+	/************************************************************************
+	 *	Über Getter können die Instanzvariablen der jeweilgen Objekte abgerufen werden.
+	 *	Im Gegensatz zu der Methode vorführen() in der Klasse Filme, ist dieses Standard. 
+	 ************************************************************************/
+	
+		System.out.printf("Titel: %s, Genre: %s - Anzahl Filme: %d%n", neuerFilm.getTitel(), neuerFilm.getGenre(), neuerFilm.getNr());
 
 	}
 }
