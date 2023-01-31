@@ -1,3 +1,10 @@
 /**********************************************************************************
-* Ein einfaches Beispiel, wie eine Klasse 
-*
+* Filme erstellen | Version 1.1
+***********************************************************************************
+* Ein einfaches Beispiel, wie bei einer Klasse 
+* - Konstruktoren erstellt werden
+* - Setter funktionieren
+* - man durch Getter von anderen Klassen zugreifen kann
+* - Klassen und Instanzvariablen genutzt werden, um den Unterschied zu sehen
+* - Klassen mit Objektnamen oder als Array erzeugt werden können
+***********************************************************************************
