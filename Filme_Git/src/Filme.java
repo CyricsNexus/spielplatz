@@ -8,15 +8,14 @@ public class Filme {
 	private String titel;				// Instanzvariable
 	private String genre;				// Instanzvariable
 	static private int laufendeNr = 0;	// Klassenvariable
-
 	
 /************************************************************************
  *	Konstruktoren 	
  ************************************************************************
- *	Es existieren zwei Konstruktoren, um einen Film zu erstellen
+ *  Es existieren zwei Konstruktoren, um einen Film zu erstellen
  *
- *	#1 ist ohne Parameter und erzeugt einen Film ohne Titel und ohne Genre
- *		hier müssen die Parameter später durch Setter hinzugefügt werden
+ *  #1 ist ohne Parameter und erzeugt einen Film ohne Titel und ohne Genre
+ *	hier müssen die Parameter später durch Setter hinzugefügt werden
  *
  *  #2 benötigt sowohl den Parameter Titel und Genre, um genutzt zu werden
  *  	diese benötigen keine nachträglichen Setter
@@ -32,9 +31,9 @@ public class Filme {
 	//Konstruktoren - Ohne Parameter
 	public Filme() {
 		laufendeNr++;			// Da es eine Klassenvariable ist, wird diese nicht dem Objekt zugeordnet
-								// sie ist ähnlich wie eine globale Variable
-								// Mit jedem neu erzeugten Film wird diese hochgezählt und ergibt denselben
-								// Wert, unabhängig, durch welches Filme-Objekt sie aufgerufen wird
+						// sie ist ähnlich wie eine globale Variable
+						// Mit jedem neu erzeugten Film wird diese hochgezählt und ergibt denselben
+						// Wert, unabhängig, durch welches Filme-Objekt sie aufgerufen wird
 	}
 	
 	//Konstruktor - Mit Parameter Titel und Genre
@@ -48,27 +47,25 @@ public class Filme {
 /************************************************************************
  *	Getter und Setter 	
  ***********************************************************************/	
+	public String getTitel() {			// Gibt den Titel des Objekts in einer anderen Klasse zurück
+		return titel;
+	}
 	
 	public void setTitel(String titel) {		// Legt den Titel des Objekts fest
 		this.titel = titel;
 	}
 
+	public String getGenre() {			// Gibt das Genre des Objekts in einer anderen Klasse zurück
+		return genre;
+	}
+	
 	public void setGenre(String genre) {		// Legt das Genre des Objekts fest
 		this.genre = genre;
 	}
-
-	public String getTitel() {					// Gibt den Titel des Objekts in einer anderen Klasse zurück
-		return titel;
-	}
-
-	public String getGenre() {					// Gibt das Genre des Objekts in einer anderen Klasse zurück
-		return genre;
-	}
-
-	public int getNr() {						// Gibt aus, wie viele Filme bislang erzeugt worden sind
+	
+	public int getNr() {				// Gibt aus, wie viele Filme bislang erzeugt worden sind
 		return laufendeNr;
 	}
-
 	
 /************************************************************************
  *	Eine Methode, um alles auszugeben
